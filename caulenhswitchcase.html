@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="month" style="width: 50px">
+<input type="button" onclick="getDay()" value="Tính số ngày">
+<p id="results"></p>
+</body>
+</html>
+<script>
+    function getDay() {
+        let month = document.getElementById("month").value;
+        if (month < 0 || month > 12) {
+            document.getElementById("results").innerHTML = "Tháng " + month + " Không hợp lệ.";
+            return;
+        }
+        switch (month) {
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                alert(month + ' là tháng có 30 ngày');
+            case 2:
+                alert(month + ' là tháng có 28 hoặc 29 ngày');
+            default:
+                alert(month + ' là tháng có 31 ngày')
+        }
+    }
+</script>
